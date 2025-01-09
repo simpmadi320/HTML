@@ -10,24 +10,38 @@
         --favColour: red;
         --myAura: brown;
         /*Note, none set variables default to 10*/
+        --spacing: 10px;
     }
     h2{
         background-color: var(--myAura);
         color: white;
-        margin: var(--missingVar, 10px) /*fall back value*/
+        /*margin: var(--missingVar, 10px) /*fall back value*/
+        margin: var(--spacing);
     }
+
+    
+    p{
+        margin: calc(var(--spacing) * 2);
+        padding: calc(2% + 2px);
+    }
+
 </style>
 
 </head>
 <body>
     <h1 style="color:var(--favColour)">This is my favourite colour</h1>
     <h2>this is my aura</h2>
+<p>paragraph 1</p>
+<p>paragraph 2</p>
+<p>paragraph 3</p>
+<p>paragraph 4</p>
+
     <button>Click Me</button>
 <script>
 const button = document.querySelector('button')
 .addEventListener('click', () => {
     
-    document.documentElement.style.setProperty('--myAura', '--favouriteColour')
+    document.documentElement.style.setProperty('--myAura', '--favColour')
     
 })
 </script>
