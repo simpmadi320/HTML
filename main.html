@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    :root{
+        --favColour: red;
+        --myAura: brown;
+        /*Note, none set variables default to 10*/
+    }
+    h2{
+        background-color: var(--myAura);
+        color: white;
+        margin: var(--missingVar, 10px) /*fall back value*/
+    }
+</style>
+
+</head>
+<body>
+    <h1 style="color:var(--favColour)">This is my favourite colour</h1>
+    <h2>this is my aura</h2>
+    <button>Click Me</button>
+<script>
+const button = document.querySelector('button')
+.addEventListener('click', () => {
+    
+    document.documentElement.style.setProperty('--myAura', '--favouriteColour')
+    
+})
+</script>
+
+</body>
+</html>
